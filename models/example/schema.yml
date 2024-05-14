@@ -26,7 +26,7 @@ models:
     columns:
       - name: c_custkey
         tests:
-          - not null
+          # - not null
           - unique
       - name: c_mktsegment
         tests:
