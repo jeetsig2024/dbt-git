@@ -1,0 +1,587 @@
+2024-05-15 16:28:15 — INFO — Running with edr=0.15.1
+2024-05-15 16:28:15 — INFO — Installing packages for edr internal dbt package...
+2024-05-15 16:28:15 — INFO — Running dbt --log-format json deps --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:28:21 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'deps', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 3563
+2024-05-15 16:28:21 — INFO — Running with dbt=1.7.14
+2024-05-15 16:28:21 — INFO — Updating lock file in file path: /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project/package-lock.yml
+2024-05-15 16:28:21 — INFO — Installing dbt-labs/dbt_utils
+2024-05-15 16:28:21 — INFO — Installed from version 0.8.6
+2024-05-15 16:28:21 — INFO — Updated version available: 1.1.1
+2024-05-15 16:28:21 — INFO — Installing elementary-data/elementary
+2024-05-15 16:28:21 — INFO — Installed from version 0.15.1
+2024-05-15 16:28:21 — INFO — Updated version available: 0.15.2
+2024-05-15 16:28:21 — INFO — 
+2024-05-15 16:28:21 — INFO — Updates available for packages: ['dbt-labs/dbt_utils', 'elementary-data/elementary']                 
+Update your versions in packages.yml, then run dbt deps
+2024-05-15 16:28:21 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:28:24 — ERROR — Unable to get the latest invocation: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'[0m
+2024-05-15 16:28:24 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:28:26 — DEBUG — Could not get warehouse info.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/data_monitoring/data_monitoring.py", line 140, in _get_warehouse_info
+    self.internal_dbt_runner.run_operation(
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'
+2024-05-15 16:28:26 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:28:28 — ERROR — Failed to parse Elementary's database and schema.[0m
+2024-05-15 16:28:28 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:28:31 — ERROR — Could not generate the report - Error: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'
+Please reach out to our community for help with this issue.[0m
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/report/report.py", line 50, in get_report_data
+    tests_api = TestsAPI(
+                ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 43, in __init__
+    self.test_results_db_rows = self._get_test_results_db_rows(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 55, in _get_test_results_db_rows
+    return self.tests_fetcher.get_all_test_results_db_rows(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/fetchers/tests/tests.py", line 25, in get_all_test_results_db_rows
+    run_operation_response = self.dbt_runner.run_operation(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'
+2024-05-15 16:45:30 — INFO — Running with edr=0.15.1
+2024-05-15 16:45:30 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:45:37 — ERROR — Unable to get the latest invocation: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 7
+    ------------------------------
+    4  |       type: snowflake
+    5  |       account:YAB77996.us-east-1
+    6  | 
+    7  |       ## User/password auth ##
+    8  |       user: vipulbhatia29
+    9  |       password: Pr0t0n@1234]
+    10 | 
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 5, column 7
+    could not find expected ':'
+      in "<unicode string>", line 7, column 7
+  [0m
+2024-05-15 16:45:37 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:45:39 — DEBUG — Could not get warehouse info.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/data_monitoring/data_monitoring.py", line 140, in _get_warehouse_info
+    self.internal_dbt_runner.run_operation(
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 7
+    ------------------------------
+    4  |       type: snowflake
+    5  |       account:YAB77996.us-east-1
+    6  | 
+    7  |       ## User/password auth ##
+    8  |       user: vipulbhatia29
+    9  |       password: Pr0t0n@1234]
+    10 | 
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 5, column 7
+    could not find expected ':'
+      in "<unicode string>", line 7, column 7
+  
+2024-05-15 16:45:39 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:45:42 — ERROR — Failed to parse Elementary's database and schema.[0m
+2024-05-15 16:45:42 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:45:44 — ERROR — Could not generate the report - Error: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 7
+    ------------------------------
+    4  |       type: snowflake
+    5  |       account:YAB77996.us-east-1
+    6  | 
+    7  |       ## User/password auth ##
+    8  |       user: vipulbhatia29
+    9  |       password: Pr0t0n@1234]
+    10 | 
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 5, column 7
+    could not find expected ':'
+      in "<unicode string>", line 7, column 7
+  
+Please reach out to our community for help with this issue.[0m
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/report/report.py", line 50, in get_report_data
+    tests_api = TestsAPI(
+                ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 43, in __init__
+    self.test_results_db_rows = self._get_test_results_db_rows(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 55, in _get_test_results_db_rows
+    return self.tests_fetcher.get_all_test_results_db_rows(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/fetchers/tests/tests.py", line 25, in get_all_test_results_db_rows
+    run_operation_response = self.dbt_runner.run_operation(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 7
+    ------------------------------
+    4  |       type: snowflake
+    5  |       account:YAB77996.us-east-1
+    6  | 
+    7  |       ## User/password auth ##
+    8  |       user: vipulbhatia29
+    9  |       password: Pr0t0n@1234]
+    10 | 
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 5, column 7
+    could not find expected ':'
+      in "<unicode string>", line 7, column 7
+  
+2024-05-15 16:46:24 — INFO — Running with edr=0.15.1
+2024-05-15 16:46:24 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:46:26 — ERROR — Unable to get the latest invocation: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 6
+    ------------------------------
+    3  |     default:
+    4  |       type: snowflake
+    5  |       account:YAB77996.us-east-1
+    6  |       user: vipulbhatia29
+    7  |       password: Pr0t0n@1234]
+    8  | 
+    9  |       role: ACCOUNTADMIN
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 5, column 7
+    could not find expected ':'
+      in "<unicode string>", line 6, column 7
+  [0m
+2024-05-15 16:46:26 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:46:29 — DEBUG — Could not get warehouse info.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/data_monitoring/data_monitoring.py", line 140, in _get_warehouse_info
+    self.internal_dbt_runner.run_operation(
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 6
+    ------------------------------
+    3  |     default:
+    4  |       type: snowflake
+    5  |       account:YAB77996.us-east-1
+    6  |       user: vipulbhatia29
+    7  |       password: Pr0t0n@1234]
+    8  | 
+    9  |       role: ACCOUNTADMIN
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 5, column 7
+    could not find expected ':'
+      in "<unicode string>", line 6, column 7
+  
+2024-05-15 16:46:29 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:46:31 — ERROR — Failed to parse Elementary's database and schema.[0m
+2024-05-15 16:46:31 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:46:34 — ERROR — Could not generate the report - Error: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 6
+    ------------------------------
+    3  |     default:
+    4  |       type: snowflake
+    5  |       account:YAB77996.us-east-1
+    6  |       user: vipulbhatia29
+    7  |       password: Pr0t0n@1234]
+    8  | 
+    9  |       role: ACCOUNTADMIN
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 5, column 7
+    could not find expected ':'
+      in "<unicode string>", line 6, column 7
+  
+Please reach out to our community for help with this issue.[0m
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/report/report.py", line 50, in get_report_data
+    tests_api = TestsAPI(
+                ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 43, in __init__
+    self.test_results_db_rows = self._get_test_results_db_rows(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 55, in _get_test_results_db_rows
+    return self.tests_fetcher.get_all_test_results_db_rows(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/fetchers/tests/tests.py", line 25, in get_all_test_results_db_rows
+    run_operation_response = self.dbt_runner.run_operation(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 6
+    ------------------------------
+    3  |     default:
+    4  |       type: snowflake
+    5  |       account:YAB77996.us-east-1
+    6  |       user: vipulbhatia29
+    7  |       password: Pr0t0n@1234]
+    8  | 
+    9  |       role: ACCOUNTADMIN
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 5, column 7
+    could not find expected ':'
+      in "<unicode string>", line 6, column 7
+  
+2024-05-15 16:47:08 — INFO — Running with edr=0.15.1
+2024-05-15 16:47:08 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:47:15 — ERROR — Unable to get the latest invocation: Failed to run dbt command.
+Encountered an error while running operation: Database Error
+  250001 (08001): Failed to connect to DB: YAB77996.us-east-1.snowflakecomputing.com:443. Incorrect username or password was specified.[0m
+2024-05-15 16:47:15 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:47:18 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1893
+2024-05-15 16:47:18 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:47:21 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1889
+2024-05-15 16:47:21 — INFO — Elementary's database and schema: '"JEET_DB.JEET_DB_SCHEMA_elementary"'
+2024-05-15 16:47:21 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:47:25 — ERROR — Could not generate the report - Error: Failed to run dbt command.
+Encountered an error while running operation: Database Error
+  250001 (08001): Failed to connect to DB: YAB77996.us-east-1.snowflakecomputing.com:443. Incorrect username or password was specified.
+Please reach out to our community for help with this issue.[0m
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/report/report.py", line 50, in get_report_data
+    tests_api = TestsAPI(
+                ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 43, in __init__
+    self.test_results_db_rows = self._get_test_results_db_rows(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 55, in _get_test_results_db_rows
+    return self.tests_fetcher.get_all_test_results_db_rows(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/fetchers/tests/tests.py", line 25, in get_all_test_results_db_rows
+    run_operation_response = self.dbt_runner.run_operation(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error while running operation: Database Error
+  250001 (08001): Failed to connect to DB: YAB77996.us-east-1.snowflakecomputing.com:443. Incorrect username or password was specified.
+2024-05-15 16:48:01 — INFO — Running with edr=0.15.1
+2024-05-15 16:48:01 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:48:06 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1815
+2024-05-15 16:48:06 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:48:09 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1893
+2024-05-15 16:48:09 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:48:12 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1889
+2024-05-15 16:48:12 — INFO — Elementary's database and schema: '"JEET_DB.JEET_DB_SCHEMA_elementary"'
+2024-05-15 16:48:12 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:48:17 — ERROR — Could not generate the report - Error: Failed to run dbt command.
+Encountered an error while running operation: Database Error
+  002003 (02000): SQL compilation error:
+  Schema 'JEET_DB.JEET_DB_SCHEMA_ELEMENTARY' does not exist or not authorized.
+Please reach out to our community for help with this issue.[0m
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/report/report.py", line 50, in get_report_data
+    tests_api = TestsAPI(
+                ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 43, in __init__
+    self.test_results_db_rows = self._get_test_results_db_rows(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 55, in _get_test_results_db_rows
+    return self.tests_fetcher.get_all_test_results_db_rows(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/fetchers/tests/tests.py", line 25, in get_all_test_results_db_rows
+    run_operation_response = self.dbt_runner.run_operation(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error while running operation: Database Error
+  002003 (02000): SQL compilation error:
+  Schema 'JEET_DB.JEET_DB_SCHEMA_ELEMENTARY' does not exist or not authorized.
+2024-05-15 16:49:21 — INFO — Running with edr=0.15.1
+2024-05-15 16:49:21 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:49:29 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 2162
+2024-05-15 16:49:29 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:49:32 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1893
+2024-05-15 16:49:32 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:49:35 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1859
+2024-05-15 16:49:35 — INFO — Elementary's database and schema: '"JEET_DB.elementary"'
+2024-05-15 16:49:35 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+[31;20m2024-05-15 16:49:40 — ERROR — Could not generate the report - Error: Failed to run dbt command.
+Encountered an error while running operation: Database Error
+  002003 (42S02): SQL compilation error:
+  Object 'JEET_DB.ELEMENTARY.ELEMENTARY_TEST_RESULTS' does not exist or not authorized.
+Please reach out to our community for help with this issue.[0m
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 88, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/report/report.py", line 50, in get_report_data
+    tests_api = TestsAPI(
+                ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 43, in __init__
+    self.test_results_db_rows = self._get_test_results_db_rows(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 55, in _get_test_results_db_rows
+    return self.tests_fetcher.get_all_test_results_db_rows(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/fetchers/tests/tests.py", line 25, in get_all_test_results_db_rows
+    run_operation_response = self.dbt_runner.run_operation(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 160, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/clients/dbt/dbt_runner.py", line 99, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error while running operation: Database Error
+  002003 (42S02): SQL compilation error:
+  Object 'JEET_DB.ELEMENTARY.ELEMENTARY_TEST_RESULTS' does not exist or not authorized.
+2024-05-15 16:54:16 — INFO — Running with edr=0.15.1
+2024-05-15 16:54:28 — INFO — Running with edr=0.15.1
+2024-05-15 16:54:28 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:54:35 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 4386
+2024-05-15 16:54:35 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:54:38 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1893
+2024-05-15 16:54:38 — INFO — edr (0.15.1) and Elementary's dbt package (0.15.2) are compatible.
+2024-05-15 16:54:38 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:54:41 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1867
+2024-05-15 16:54:41 — INFO — Elementary's database and schema: '"JEET_DB.JEET_DB_SCHEMA"'
+2024-05-15 16:54:41 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:54:47 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1819
+2024-05-15 16:54:47 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_source_freshness_results", "macro_args": {"days_back": 7, "invocations_per_test": 720}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:54:54 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_source_freshness_results", "macro_args": {"days_back": 7, "invocations_per_test": 720}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1819
+2024-05-15 16:54:54 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models", "macro_args": {"exclude_elementary": true}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:54:59 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models", "macro_args": {"exclude_elementary": true}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 7183
+2024-05-15 16:54:59 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_sources", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:55:05 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_sources", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1819
+2024-05-15 16:55:05 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_exposures", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:55:11 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_exposures", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1819
+2024-05-15 16:55:11 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_singular_tests", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:55:16 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_singular_tests", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 2197
+2024-05-15 16:55:16 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_runs", "macro_args": {"days_back": 7, "exclude_elementary": true}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:55:22 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_runs", "macro_args": {"days_back": 7, "exclude_elementary": true}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 26323
+2024-05-15 16:55:22 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_dbt_models_test_coverage", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:55:27 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_dbt_models_test_coverage", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 2459
+2024-05-15 16:55:27 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_nodes_depends_on_nodes", "macro_args": {"exclude_elementary": true}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:55:32 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_nodes_depends_on_nodes", "macro_args": {"exclude_elementary": true}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 3599
+2024-05-15 16:55:32 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:55:38 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_latest_invocation", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 9832
+2024-05-15 16:55:38 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_latest_invocations_data", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 16:55:43 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_latest_invocations_data", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 2241
+2024-05-15 17:02:34 — INFO — Running with edr=0.15.1
+2024-05-15 17:02:41 — INFO — Running with edr=0.15.1
+2024-05-15 17:02:56 — INFO — Running with edr=0.15.1
+2024-05-15 17:02:56 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:02 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 4041
+2024-05-15 17:03:02 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:05 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1893
+2024-05-15 17:03:05 — INFO — edr (0.15.1) and Elementary's dbt package (0.15.2) are compatible.
+2024-05-15 17:03:05 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:08 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1867
+2024-05-15 17:03:08 — INFO — Elementary's database and schema: '"JEET_DB.JEET_DB_SCHEMA"'
+2024-05-15 17:03:08 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:14 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 48675
+2024-05-15 17:03:14 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_source_freshness_results", "macro_args": {"days_back": 7, "invocations_per_test": 720}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:20 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_source_freshness_results", "macro_args": {"days_back": 7, "invocations_per_test": 720}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1819
+2024-05-15 17:03:20 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models", "macro_args": {"exclude_elementary": true}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:25 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models", "macro_args": {"exclude_elementary": true}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 7183
+2024-05-15 17:03:25 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_sources", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:31 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_sources", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1819
+2024-05-15 17:03:31 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_exposures", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:37 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_exposures", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 1819
+2024-05-15 17:03:37 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_singular_tests", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:42 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_singular_tests", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 2197
+2024-05-15 17:03:42 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_runs", "macro_args": {"days_back": 7, "exclude_elementary": true}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:48 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_runs", "macro_args": {"days_back": 7, "exclude_elementary": true}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 28095
+2024-05-15 17:03:48 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_dbt_models_test_coverage", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:53 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_dbt_models_test_coverage", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 2459
+2024-05-15 17:03:53 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_nodes_depends_on_nodes", "macro_args": {"exclude_elementary": true}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:03:58 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_nodes_depends_on_nodes", "macro_args": {"exclude_elementary": true}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 3599
+2024-05-15 17:03:58 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_latest_invocation", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:04:04 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_latest_invocation", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 9835
+2024-05-15 17:04:04 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_latest_invocations_data", "macro_args": {}} --project-dir /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project
+2024-05-15 17:04:09 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_latest_invocations_data", "macro_args": {}}', '--project-dir', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/elementary/monitor/dbt_project']' is 2719

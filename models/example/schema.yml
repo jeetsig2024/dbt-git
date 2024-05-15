@@ -9,6 +9,7 @@ models:
         description: "The primary key for this table"
         tests:
           - unique
+          - not_null
 
   - name: my_second_dbt_model
     description: "A starter dbt model"
@@ -22,6 +23,9 @@ models:
     description: "A date test"
   - name: incremental_time
     description: "time"
+  - name : python_val
+    description: "time"
+  - name : customer_purchases
   - name: playing_with_tests
     columns:
       - name: c_custkey
@@ -32,3 +36,11 @@ models:
         tests:
           - accepted_values:
               values: ['BUILDING', 'AUTOMOBILE', 'MACHINERY', 'HOUSEHOLD', 'FURNITURE']
+
+sources:
+  - name: source_check
+    database: snowflake_sample_data
+    schema: tpch_sf1
+    tables:
+      - name: customer
+      - name: orders

@@ -1,3 +1,3 @@
-{{config(materialized="table")}}
+{{config(materialized="table",post_hook= 'grant select on {{this}} to role ANALYST')}}
 
-select * from "SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."CUSTOMER"
+select * from {{ source('source_check','customer')}}
